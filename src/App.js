@@ -1,20 +1,22 @@
-import './styles/App.css';
-import {Card, CardsList} from './components'
-import img1 from './images/img1.jpeg'
+import './stylesheet/App.css';
+import {BodyWrapper} from './components'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import {Navbar, Footer} from './components'
-import MainView from './MainView';
-import DetailsView from './DetailsView';
-import CreateView from './CreateView';
+import MainView from './views/MainView';
+import DetailsView from './views/DetailsView';
+import CreateView from './views/CreateView';
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/Main" element={<MainView />} exact />
-        <Route path="/Details/:id" element={<DetailsView />}  />
-        <Route path="/Create" element={<CreateView />}  />
-      </Routes>
+      <BodyWrapper>
+        <Routes>
+          <Route path="/Main" element={<MainView />} exact />
+          <Route path="/Details/:id" element={<DetailsView />} />
+          <Route path="/Create" element={<CreateView />} />
+          <Route path="/Edit/:id" element={<CreateView />} exact/>
+        </Routes>
+      </BodyWrapper>
       <Footer />
     </BrowserRouter>
   );

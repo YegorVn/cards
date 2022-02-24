@@ -2,28 +2,24 @@ const initialState = {
     cards: []
 }
 
-function nextCardId(cards) {
-    if(cards.length > 1){
-        return cards.reduce((maxId, card) => Math.max(card.id, maxId), -1) + 1;
-    }
-    else return 1
-}
+// function nextCardId(cards) {
+//     if(cards.length > 1){
+//         return cards.reduce((maxId, card) => Math.max(card.id, maxId), -1) + 1;
+//     }
+//     else return 1
+// }
 
 export default function Cards(state = initialState, action){
     switch (action.type) {
-      case "get":
-        return state;
-
+      
       case "create":
         return {
           ...state,
           cards: [
             ...state.cards,
             {
-              id: state.cards.length,
-              title: action.payload.title,
-              text: action.payload.text,
-              tags: action.payload.tags
+              ...action.payload,
+              id: state.cards.length
             },
           ],
         };

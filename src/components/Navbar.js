@@ -4,7 +4,6 @@ import home from '../images/icons/home.svg'
 const Navbar = () => {
     return (
       <>
-      <header className="ghost-header"></header>
       <header className="header col-12">
         <div className="header__navbar col-10 ms-auto me-auto d-flex">
           <Link to="/Main" className="header__link">
@@ -20,7 +19,9 @@ const Navbar = () => {
             Create
           </Link>
         </div>
-      </header></>
+      </header>
+      <header className="ghost-header col-12"></header>
+      </>
       
     );
 }
