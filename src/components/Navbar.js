@@ -16,7 +16,7 @@ const Navbar = () => {
             />
           </Link>
           <Link to="/Create" className="ms-auto mt-3">
-            Create
+            Create Card
           </Link>
         </div>
       </header>
